@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <meta charset='utf-8'> 
+    <script type="text/javascript" src="jquery-1.9.1.js"></script>
+    <style type="text/css">
+      body {
+        font-size: 16px;
+      }
+
+      .donation {
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 40px;
+        border: 1px solid #ccc;
+        font-family: "OpenSans";
+        color: white;
+        background: #3498db;
+        border-radius: 3px;
+        padding: 10px;
+      }
+
+      .donation h1 {
+        font-size: 1.9em;
+        text-align: center;
+        color: white;
+      }
+
+      .donation ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .donation ul li {
+        width: 250px;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        font-size: 1.7em;
+        position: relative;
+        border-radius: 3px;
+        line-height: 42px;
+        cursor: pointer;
+        background: white;
+        color: #34495e;
+      }
+
+      .donation label {
+        padding-left: 10px;
+        cursor: pointer;
+        width: 209px;
+        display: inline-block;
+      }
+
+      .donation .button {
+        border: 0;
+        width: 250px;
+        font-size: 1.7em;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        cursor: pointer;
+        background: #2ECC71;
+        padding: 10px 5px;
+        color: white;
+        transition: background 0.2s;
+        margin-top: 25px;
+      }
+
+      .donation .button:hover {
+        background: #58d68d;
+      }
+
+      .donation .outro-valor {
+        font-size: 1em;
+        width: 219px;
+        border: none;
+        padding-left: 10px;
+        outline: 0;
+        cursor: pointer;
+        height: 42px;
+        border-radius: 3px;
+      }
+
+      .donation .outro-valor:focus {
+        color: white;
+      }
+
+      .donation .before-radio {
+        position: absolute;
+        width: 30px;
+        height: 36px;
+        padding: 3px;
+        color: #FFF;
+        text-align: center;
+        pointer-events: none;
+        left: 0;
+        border-radius: 3px
+      }
+       
+      .donation input[type="radio"] {
+        margin: 0;
+        width: 31px;
+        height: 31px;
+        cursor: pointer;
+        opacity: 0;
+      }
+
+      .donation input[type="radio"]:checked ~ label, input[type="radio"]:checked ~ input, input[type="radio"]:checked ~ ::-webkit-input-placeholder {
+        background: #2ECC71;
+        color: white;      
+        border-radius: 3px;
+      }
+
+      .donation input[type="radio"]:checked ~ .before-radio {
+        background: #2ECC71;
+      }
+
+      .donation input[type="radio"] ~ .before-radio:after {
+        content: "•";
+        color: #34495e;
+      }
+
+      .donation input[type="radio"]:hover  ~ .before-radio:after {
+        color: white;
+      }
+
+      .donation input[type="radio"]:checked ~ .before-radio:after {
+        content: "✔";
+        font-size: 0.9em;
+        color: white;
+      }
+
+      .donation em {
+        text-align: center;
+        display: block;
+        color: #eee;
+      }
+
+      .donation ul li:hover {
+        background: #2ECC71;
+        color: white;
+      }
+
+      .donation ul li:hover .before-radio {
+        background: #2ECC71;
+        outline: 1px #2ECC71;;
+      }
+
+      .donation ul li:hover ::-webkit-input-placeholder {
+        color: white;
+      }
+
+      .donation ul li:hover .outro-valor {
+        background: #2ECC71;
+        color: white;
+      }
+
+      .donation img {
+        width: 160px;
+        border-radius: 5px;
+        position: relative;
+        top: 12px;
+        border: 2px solid #62B22D;
+      }
+    </style>
+    <script>
+      $(function() {
+        $('.outro-valor').focus(function () {
+          $('#amount4').prop('checked', true);
+        });
+      });
+    </script>
+  <head>
+  <body>
+    <div class="donation">
+      <h1>Doe via <img src="pagseguro.jpg"></img></h1>
+      <em>Selecione uma opção:</em>
+      <ul>
+        <li>
+          <input id="amount1" type="radio" name="amount"></input><span class="before-radio"></span><label for="amount1">R$ 5.00</label>
+        </li>
+        <li>
+          <input id="amount2" type="radio" name="amount"></input><span class="before-radio"></span><label for="amount2">R$ 25.00</label>
+        </li>
+        <li>
+          <input id="amount3" type="radio" name="amount"></input><span class="before-radio"></span><label for="amount3">R$ 50.00</label>
+        </li>
+        <li>
+          <input id="amount4" type="radio" name="amount"><span class="before-radio"></span><input class="outro-valor" placeholder="outro valor"></input></input>
+        </li>
+      </ul>
+      <input type="button" class="button" value="❤ Doe agora"></input>
+    </div>
+  </body>
+</html>
